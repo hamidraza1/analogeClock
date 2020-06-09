@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00aa9e;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 25px solid #66cbc5;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.clock .tick {
+  background-color: #000;
+  width: 10px;
+  height: 50%;
+  position: absolute;
+  transform-origin: bottom;
+}
+.clock .tick::after {
+  content: "";
+  height: 80%;
+  width: 10px;
+  bottom: 0;
+  background-color: white;
+  position: absolute;
+}
+.right {
+  transform: rotate(90deg);
+}
+
+.down {
+  transform: rotate(180deg);
+}
+
+.left {
+  transform: rotate(270deg);
+}
+
+.centre {
+  height: 15px;
+  width: 15px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.clock::after {
+  content: "";
+  height: 350px;
+  width: 300px;
+  position: absolute;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
+  top: 50%;
+  transform-origin: top center;
+  transform: rotate(-45deg);
+}
+
+.hour {
+  width: 8px;
+  height: 90px;
+  background-color: #000;
+  z-index: 3;
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+.minute {
+  width: 6px;
+  height: 80px;
+  background-color: #000;
+  z-index: 3;
+  position: absolute;
+  bottom: 50%;
+  transform: rotate(75deg);
+  transform-origin: bottom;
+}
+.second {
+  width: 4px;
+  height: 90px;
+  background-color: #e11211;
+  z-index: 1;
+  position: absolute;
+  bottom: 50%;
+  transform: rotate(225deg);
+  transform-origin: bottom;
+}
